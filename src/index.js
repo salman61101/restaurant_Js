@@ -1,3 +1,29 @@
 import "./style.css";
 
-console.log("Restaurant App Loaded!");
+import loadHome from "./home";
+import loadMenu from "./menu";
+import loadContact from "./contact";
+
+const content = document.getElementById("content");
+
+function clearContent() {
+    content.innerHTML = "";
+}
+
+document.getElementById("home-btn").addEventListener("click", () => {
+    clearContent();
+    loadHome();
+});
+
+document.getElementById("menu-btn").addEventListener("click", () => {
+    clearContent();
+    loadMenu();
+});
+
+document.getElementById("contact-btn").addEventListener("click", () => {
+    clearContent();
+    loadContact();
+});
+
+// Load Home page when website opens
+loadHome();
